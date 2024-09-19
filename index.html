@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add and Expence </title>
+</head>
+<style>
+    table{
+        border: 2px solid black;
+        margin:3rem ;
+    }
+
+   table tr th , td{
+    padding: 2px 20px;
+        border: 2px solid black;
+        text-align: center
+        
+    }
+   body{
+    background: rgb(75,6,224);
+    background: linear-gradient(90deg, rgba(75,6,224,1) 8%, rgba(253,187,45,1));
+    /* height: 100vh; */
+   }
+    .box{
+        width: 50%;
+        margin: 5rem auto;
+    }
+    .box h1{
+        text-align: center;
+        color: aliceblue;
+    }
+    
+    
+    
+    
+</style>
+<body>
+    <div class="box">
+
+<h1> Expense - Tracker</h1>
+
+        <div id="wrapper">
+            <input type="number" id="salary">
+            <p> Total : <span id="total"> </span> </p>
+            <p>Expense : <span id="expend"></span> </p>
+            <p>Remain : <span id="remain"></span> </p>
+        </div>
+        
+        <div id="wrapper">
+            <input type="text" id="expenseName" >
+            <input type="number"  id="expense">
+            <button onclick="addexpense()">Add Expense</button>
+            
+        </div>
+        
+        
+        <table id="data">
+            <tr>
+                <th>S.no</th>
+                <th>info </th>
+                <th>amount </th>
+            </tr>
+            
+        </table>
+        
+    </div>
+
+    <script>
+        let salary = document.querySelector("#salary")
+        let expense = document.querySelector("#expense")
+        let info = document.querySelector("#expenseName")
+
+        let  total = document.querySelector("#total")
+        let  spend = document.querySelector("#expend")
+        let  remainAmt = document.querySelector("#remain")
+
+        let  table= document.querySelector("#data")
+         let tr =document.querySelector("tr")
+         
+         let x=0
+         
+        function addexpense(){
+             total.innerHTML =+ salary.value
+              
+spend.innerHTML = Number(expense.value) + Number(spend.innerHTML)
+
+            remainAmt.innerHTML = Number(total.innerHTML) - Number(spend.innerHTML) 
+            
+            
+
+
+            let tar = document.createElement("tr")
+
+            
+         let th1 = document.createElement("td")
+         th1.innerHTML= x = ++x
+         tar.append(th1)
+
+
+         let th2 = document.createElement("td")
+         th2.innerHTML= info.value 
+         
+             tar.append(th2)
+
+         let th3 = document.createElement("td")
+
+          th3.innerHTML=  expense.value
+        
+             tar.append(th3)
+
+         table.append(tar)
+
+             
+        }
+
+
+    </script>
+
+</body>
+</html>
